@@ -31,6 +31,7 @@ public class AsyncTaskUser extends AsyncTask<String,String,String> {
 
     @Override
     protected void onPreExecute() {
+
         super.onPreExecute();
         pDialog = new ProgressDialog(activity);
         pDialog.setMessage(activity.getResources().getString(R.string.txt_Show));
@@ -102,12 +103,16 @@ public class AsyncTaskUser extends AsyncTask<String,String,String> {
 
                         JSONObject json = new JSONObject(content);
                         String name = json.getString("name");
-
+                        String apiKey = json.getString("apiKey");
                         Intent i = new Intent(activity,MainActivity.class);
                         pre = activity.getSharedPreferences("store",activity.MODE_PRIVATE);
                         editor = pre.edit();
                         editor.putString("name",name);
+                        editor.putString("apiKey",apiKey);
                         editor.commit();
+                        synchronized (editor) {
+
+                        }
                         activity.startActivity(i);
 
                     }

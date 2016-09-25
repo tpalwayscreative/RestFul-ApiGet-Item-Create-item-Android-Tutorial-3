@@ -9,4 +9,6 @@
     <string name="txt_create_an_account">Create An Account</string>
     <string name="txt_you_have_an_account">You have an account</string>
     <string name="txt_Show">Progressing Please wait...</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_message">Message</string>
 </resources>

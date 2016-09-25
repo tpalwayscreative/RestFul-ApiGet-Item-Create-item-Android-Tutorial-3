@@ -8,20 +8,36 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="co.tpcreatice.restfulapi.MainActivity">
-
-    <TextView
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_centerInParent="true"
-        android:id="@+id/textWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <Button
-        android:text="@string/txt_SignOut"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/btnSignOut"
+    <ListView
+        android:layout_above="@+id/ll_Home"
+        android:id="@+id/lv_Home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/ll_Home"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <EditText
+            android:id="@+id/edt_Home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/prompt_message"
+            android:imeActionId="@+id/send"
+            android:imeActionLabel="@string/action_send"
+            android:imeOptions="actionSend"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"/>
+        <ImageButton
+            android:id="@+id/btnAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            android:contentDescription="@string/action_send"/>
+
+    </LinearLayout>
 </RelativeLayout>
